@@ -24,7 +24,7 @@ jobs:
     - name: Build and Export Next.js
       run: |
         npm run build
-        npm run export
+        
 
     - name: Deploy via FTP to Hostinger
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
