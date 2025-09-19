@@ -21,11 +21,6 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Build and Export Next.js
-      run: |
-        npm run build
-        npx serve@latest out
-
     - name: Deploy via FTP to Hostinger
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
