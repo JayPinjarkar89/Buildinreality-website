@@ -1,5 +1,7 @@
 "use client";
 
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 import {
   FaCubes,
   FaExclamationTriangle,
@@ -87,7 +89,8 @@ const services = [
 ];
 
 export default function ServicesPage() {
-  return (
+  return (<>
+    <Header />
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
@@ -175,6 +178,8 @@ export default function ServicesPage() {
         </div>
       </section>
     </div>
+    <Footer />
+    </>
   );
 }
 
