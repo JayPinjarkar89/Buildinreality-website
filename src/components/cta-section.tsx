@@ -37,11 +37,11 @@ export function CTASection() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-slate-50/80">
               <div className="flex items-center space-x-2">
                 <FiMail />
-                <span>contact@buildinreality.com</span>
+                <span>jaypinjarkar89@gmail.com</span>
               </div>
               <div className="flex items-center space-x-2">
                 <FiPhone />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 8999529110</span>
               </div>
             </div>
           </div>

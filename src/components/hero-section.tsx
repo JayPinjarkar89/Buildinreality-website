@@ -41,13 +41,13 @@ export function HeroSection() {
                 className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-lime-400 text-white font-medium hover:bg-blue-500 transition-colors text-lg"
               >
                 Start Your Project
-                <FaArrowRight  />
+                <FaArrowRight />
               </a>
               <a
                 href="#demo"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-md border border-lime-400 text-lime-400 hover:bg-blue-50 transition-colors text-lg"
               >
-                <FaPlay  />
+                <FaPlay />
                 Watch Demo
               </a>
             </div>
@@ -91,7 +91,7 @@ export function HeroSection() {
                 </div>
 
                 {/* Simulated AR Interface */}
-                <div className="bg-white rounded-lg p-4 border border-blue-300">
+                {/* <div className="bg-white rounded-lg p-4 border border-blue-300">
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-xs text-lime-400 font-medium">
                       BUILDING PROGRESS
@@ -103,7 +103,7 @@ export function HeroSection() {
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div className="bg-lime-400 h-2 rounded-full w-3/4"></div>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* Background Elements */}

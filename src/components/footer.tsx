@@ -9,7 +9,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <FaCube size={32} color="text-lime-400" />
+              {/* <FaCube size={32} color="text-lime-400" /> */}
               <div className="flex items-center">
                 <span className="text-xl font-bold">BUILD</span>
                 <span className="text-xl font-bold text-lime-400">IN</span>
@@ -94,7 +94,7 @@ export function Footer() {
               <div className="flex items-center space-x-2">
                 <MdLocationOn className="w-2 h-2" />
                 <span>Plot no. K 28, Sai Sahawas Borle
-Nagar, Yavatmal</span>
+                  Nagar, Yavatmal</span>
               </div>
             </div>
           </div>

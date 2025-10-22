@@ -15,7 +15,7 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <MdCable size={32} className="text-lime-400" />
+            {/* <MdCable size={32} className="text-lime-400" /> */}
             <div className="flex items-center">
               <span className="text-xl font-bold text-gray-900">BUILD</span>
               <span className="text-xl font-bold text-lime-400">IN</span>
@@ -25,21 +25,24 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
+            <Link href="/" className="text-gray-800 hover:text-lime-400 transition-classNames">
+              Home
+            </Link>
             <Link href="/services" className="text-gray-800 hover:text-lime-400 transition-classNames">
               Services
             </Link>
-            <a href="#solutions" className="text-gray-800 hover:text-lime-400 transition-classNames">
+            <Link href="/#solutions" className="text-gray-800 hover:text-lime-400 transition-classNames">
               Solutions
-            </a>
-            <a href="#technology" className="text-gray-800 hover:text-lime-400 transition-classNames">
+            </Link>
+            <Link href="/#technology" className="text-gray-800 hover:text-lime-400 transition-classNames">
               Technology
-            </a>
-            <a href="#about" className="text-gray-800 hover:text-lime-400 transition-classNames">
+            </Link>
+            <Link href="/#about" className="text-gray-800 hover:text-lime-400 transition-classNames">
               About
-            </a>
-            <a href="#contact" className="text-gray-800 hover:text-lime-400 transition-classNames">
+            </Link>
+            <Link href="/#contact" className="text-gray-800 hover:text-lime-400 transition-classNames">
               Contact
-            </a>
+            </Link>
           </nav>
 
           {/* CTA Button */}
@@ -69,21 +72,24 @@ export function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200">
             <nav className="flex flex-col space-y-4">
+              <Link href="/" className="text-gray-800 hover:text-lime-400 transition-classNames">
+                Home
+              </Link>
               <Link href="/services" className="text-gray-800 hover:text-lime-400 transition-classNames">
                 Services
               </Link>
-              <a href="#solutions" className="text-gray-800 hover:text-lime-400 transition-classNames">
+              <Link href="#solutions" className="text-gray-800 hover:text-lime-400 transition-classNames">
                 Solutions
-              </a>
-              <a href="#technology" className="text-gray-800 hover:text-lime-400 transition-classNames">
+              </Link>
+              <Link href="#technology" className="text-gray-800 hover:text-lime-400 transition-classNames">
                 Technology
-              </a>
-              <a href="#about" className="text-gray-800 hover:text-lime-400 transition-classNames">
+              </Link>
+              <Link href="#about" className="text-gray-800 hover:text-lime-400 transition-classNames">
                 About
-              </a>
-              <a href="#contact" className="text-gray-800 hover:text-lime-400 transition-classNames">
+              </Link>
+              <Link href="#contact" className="text-gray-800 hover:text-lime-400 transition-classNames">
                 Contact
-              </a>
+              </Link>
               <Link
                 href="/get-started"
                 className="w-full mt-4 px-4 py-2 rounded-md bg-lime-400 text-white font-medium hover:bg-blue-500 transition-classNames text-center"

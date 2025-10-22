@@ -1,7 +1,5 @@
 "use client";
 
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
 import {
   FaCubes,
   FaExclamationTriangle,
@@ -12,6 +10,8 @@ import {
   FaArrowRight,
   FaCheckCircle,
 } from "react-icons/fa";
+import toast, { Toaster } from "react-hot-toast";
+
 
 const services = [
   {
@@ -87,10 +87,22 @@ const services = [
     color: "from-secondary/10 to-secondary/5",
   },
 ];
+ const handleContactUs = () => {
+    window.location.href = "mailto:jaypinjarkar89@gmail.com";
+  };
+
+  const handleScheduleDemo = () => {
+    const email = prompt("Enter your email to schedule a demo:");
+    if (email) {
+      toast.success("Build in Reality will contact you soon!");
+      console.log("User email:", email); // You can handle the email as needed
+    } else {
+      toast.error("Please enter a valid email!");
+    }
+  };
 
 export default function ServicesPage() {
   return (<>
-    <Header />
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
@@ -167,18 +179,19 @@ export default function ServicesPage() {
             make.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-lime-400 text-lime-400-foreground hover:bg-lime-400/90 transition">
+            <button  onClick={handleScheduleDemo} className="flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-lime-400 text-lime-400-foreground hover:bg-lime-400/90 transition cursor-pointer">
               Schedule Demo
               <FaArrowRight className="w-5 h-5" />
             </button>
-            <button className="flex items-center justify-center gap-2 px-6 py-3 rounded-md border border-border text-foreground hover:bg-muted transition">
-              Contact Sales
+            <button  onClick={handleContactUs} className="flex items-center justify-center gap-2 px-6 py-3 rounded-md border border-border text-foreground hover:bg-muted transition cursor-pointer">
+              Contact us
             </button>
+            
+      <Toaster position="top-right" />
           </div>
         </div>
       </section>
     </div>
-    <Footer />
     </>
   );
 }
