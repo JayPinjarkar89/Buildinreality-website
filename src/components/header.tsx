@@ -37,9 +37,9 @@ export function Header() {
             <Link href="/#technology" className="text-gray-800 hover:text-lime-400 transition-classNames">
               Technology
             </Link>
-            <Link href="/#about" className="text-gray-800 hover:text-lime-400 transition-classNames">
+            {/* <Link href="/#about" className="text-gray-800 hover:text-lime-400 transition-classNames">
               About
-            </Link>
+            </Link> */}
             <Link href="/#contact" className="text-gray-800 hover:text-lime-400 transition-classNames">
               Contact
             </Link>
@@ -84,9 +84,9 @@ export function Header() {
               <Link href="#technology" className="text-gray-800 hover:text-lime-400 transition-classNames">
                 Technology
               </Link>
-              <Link href="#about" className="text-gray-800 hover:text-lime-400 transition-classNames">
+              {/* <Link href="#about" className="text-gray-800 hover:text-lime-400 transition-classNames">
                 About
-              </Link>
+              </Link> */}
               <Link href="#contact" className="text-gray-800 hover:text-lime-400 transition-classNames">
                 Contact
               </Link>
