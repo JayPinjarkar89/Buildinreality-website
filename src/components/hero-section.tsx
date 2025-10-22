@@ -53,7 +53,7 @@ export function HeroSection() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-200">
+            {/* <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-200">
               <div>
                 <div className="text-2xl font-bold text-lime-400">50+</div>
                 <div className="text-sm text-gray-600">Projects Completed</div>
@@ -66,7 +66,7 @@ export function HeroSection() {
                 <div className="text-2xl font-bold text-lime-400">30%</div>
                 <div className="text-sm text-gray-600">Time Saved</div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Visual */}

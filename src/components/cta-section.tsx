@@ -20,7 +20,7 @@ export function CTASection() {
           </div>
 
           {/* Buttons */}
-          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-lime-400 text-slate-900 font-semibold hover:bg-lime-400/90 transition">
               Start Your Project
               <FiArrowRight />
@@ -30,7 +30,7 @@ export function CTASection() {
               <FiPhone />
               Schedule Demo
             </button>
-          </div> */}
+          </div>
 
           {/* Contact Info */}
           <div className="pt-8 border-t border-slate-100/20">

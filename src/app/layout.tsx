@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Build in Reality – Transforming Construction with AR/VR Technology",
+  title: "BuildinReality – Transforming Construction with AR/VR Technology",
   description: "Discover Build in Reality, a cutting-edge platform revolutionizing construction through augmented and virtual reality. Enhance project visualization, coordination, and execution with our innovative AR/VR solutions.",
 };
 
@@ -25,14 +25,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    
+
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-          <Header />
+        <Header />
         {children}
-            <Footer />
+        <Footer />
       </body>
     </html>
   );
