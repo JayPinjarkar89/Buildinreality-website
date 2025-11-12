@@ -69,13 +69,13 @@ export function TechnologySection() {
               </div>
             </div>
 
-            <a
+            {/* <a
               href="#explore"
               className="inline-flex items-center px-6 py-3 rounded-md bg-lime-400 text-white font-medium hover:bg-blue-500 transition-colors"
             >
               Explore Technology
               <FaArrowRight className="ml-2 w-4 h-4" />
-            </a>
+            </a> */}
           </div>
 
           {/* Technology Showcase */}

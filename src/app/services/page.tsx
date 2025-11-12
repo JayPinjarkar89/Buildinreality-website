@@ -7,10 +7,10 @@ import {
   FaCalendarAlt,
   FaFileAlt,
   FaChartBar,
-  FaArrowRight,
   FaCheckCircle,
 } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
+import { FiArrowRight } from "react-icons/fi";
 
 
 const services = [
@@ -87,19 +87,10 @@ const services = [
     color: "from-secondary/10 to-secondary/5",
   },
 ];
- const handleContactUs = () => {
-    window.location.href = "mailto:jaypinjarkar89@gmail.com";
-  };
 
-  const handleScheduleDemo = () => {
-    const email = prompt("Enter your email to schedule a demo:");
-    if (email) {
-      toast.success("Build in Reality will contact you soon!");
-      console.log("User email:", email); // You can handle the email as needed
-    } else {
-      toast.error("Please enter a valid email!");
-    }
-  };
+const handleDemo = () => {
+  window.open("  https://docs.google.com/forms/d/e/1FAIpQLSc7jSSKcG4JBoG8mxn-wj4s5jOtw9igfsSzJcjJATuv20IYEg/viewform?usp=dialog", "_blank");
+};
 
 export default function ServicesPage() {
   return (<>
@@ -154,10 +145,10 @@ export default function ServicesPage() {
                       ))}
                     </ul>
 
-                    <button className="w-full flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md text-foreground group-hover:bg-lime-400 group-hover:text-lime-400-foreground group-hover:border-lime-400 transition-all duration-300 bg-transparent">
+                    {/* <button className="w-full flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md text-foreground group-hover:bg-lime-400 group-hover:text-lime-400-foreground group-hover:border-lime-400 transition-all duration-300 bg-transparent">
                       Learn More
                       <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               );
@@ -179,20 +170,17 @@ export default function ServicesPage() {
             make.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button  onClick={handleScheduleDemo} className="flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-lime-400 text-lime-400-foreground hover:bg-lime-400/90 transition cursor-pointer">
+            <button onClick={handleDemo}
+              className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-lime-400 text-slate-900 font-semibold hover:bg-lime-400/90 transition cursor-pointer hover:bg-gray-500 transition-colors">
               Schedule Demo
-              <FaArrowRight className="w-5 h-5" />
+              <FiArrowRight />
             </button>
-            <button  onClick={handleContactUs} className="flex items-center justify-center gap-2 px-6 py-3 rounded-md border border-border text-foreground hover:bg-muted transition cursor-pointer">
-              Contact us
-            </button>
-            
-      <Toaster position="top-right" />
+            <Toaster position="top-right" />
           </div>
         </div>
       </section>
     </div>
-    </>
+  </>
   );
 }
 

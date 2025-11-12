@@ -48,10 +48,11 @@ export function Header() {
           {/* CTA Button */}
           <div className="hidden md:flex">
             <Link
-              href="/get-started"
-              className="px-4 py-2 rounded-md bg-lime-400 text-white font-medium hover:bg-blue-500 transition-classNames"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScJ3xcv1kDrWptN6QtZ-B1ozUp5hQIo7p26HtYCreJ75cH2cg/viewform?usp=sharing&ouid=109386348153102760754"
+              target="_blank"
+              className="px-4 py-2 rounded-md bg-lime-400 text-white font-medium hover:bg-gray-500 transition-classNames"
             >
-              Get Started
+              Contact Us
             </Link>
           </div>
 
@@ -91,10 +92,11 @@ export function Header() {
                 Contact
               </Link>
               <Link
-                href="/get-started"
+                href="https://docs.google.com/forms/d/e/1FAIpQLScJ3xcv1kDrWptN6QtZ-B1ozUp5hQIo7p26HtYCreJ75cH2cg/viewform?usp=sharing&ouid=109386348153102760754"
+                target="_blank"
                 className="w-full mt-4 px-4 py-2 rounded-md bg-lime-400 text-white font-medium hover:bg-blue-500 transition-classNames text-center"
               >
-                Get Started
+                Contact Us
               </Link>
             </nav>
           </div>
