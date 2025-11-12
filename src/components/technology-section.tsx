@@ -1,7 +1,12 @@
 
 "use client";
 
-import { FaArrowRight, FaMobileAlt, FaDesktop, FaHeadphones } from "react-icons/fa";
+import Image from "next/image";
+import { AiFillDatabase } from "react-icons/ai";
+import { FaDesktop, FaRegBuilding } from "react-icons/fa";
+import { ImCloudCheck } from "react-icons/im";
+import { IoAlertOutline } from "react-icons/io5";
+
 
 export function TechnologySection() {
   return (
@@ -17,53 +22,59 @@ export function TechnologySection() {
               </div>
 
               <h2 className="text-3xl sm:text-4xl font-bold">
-                Cutting-Edge AR/VR Platform
+                Cutting-Edge AR/VR and Web Platforms
               </h2>
 
               <p className="text-lg text-gray-600">
-                Our proprietary technology combines augmented reality, virtual
-                reality, and advanced 3D modeling to create an immersive
-                construction experience that bridges the gap between digital
-                planning and physical execution.
+                At the heart of our innovation lies a seamless integration of Augmented Reality (AR) and Cloud Technology — designed to bridge the gap between design and execution in construction projects. Our advanced solutions, SiteLens and FieldSync, empower teams to visualize, collaborate, and deliver with unmatched accuracy and efficiency.
               </p>
             </div>
 
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
                 <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <FaMobileAlt className="w-4 h-4 text-lime-400" />
+                  <FaRegBuilding className="w-4 h-4 text-lime-400" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">Mobile AR Integration</h3>
+                  <h3 className="font-semibold mb-2">Immersive Visualization and BIM Integration</h3>
                   <p className="text-gray-600">
-                    Access AR features directly from your mobile device for
-                    on-site visualization and real-time updates.
+                    Bring Building Information Modeling (BIM) directly to the construction site through Augmented Reality (AR). Visualize 3D models in real environments for better understanding, alignment, and execution.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-4">
                 <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <FaHeadphones className="w-4 h-4 text-lime-400" />
+                  <ImCloudCheck className="w-4 h-4 text-lime-400" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">VR Immersion</h3>
+                  <h3 className="font-semibold mb-2">Real-Time Field and Cloud Synchronization</h3>
                   <p className="text-gray-600">
-                    Experience complete virtual walkthroughs of your projects
-                    before construction begins.
+                    Ensure continuous coordination between on-site teams and remote stakeholders. Updates from SiteLens sync instantly with FieldSync, providing a single source of truth for progress and data management.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-4">
                 <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <FaDesktop className="w-4 h-4 text-lime-400" />
+                  <IoAlertOutline className="w-4 h-4 text-lime-400" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">Cloud Synchronization</h3>
+                  <h3 className="font-semibold mb-2">Early Issue Detection and Quality Assurance</h3>
                   <p className="text-gray-600">
-                    All data syncs seamlessly across devices and platforms for
-                    unified project management.
+                    Detect design clashes, deviations, or construction errors early using visual overlays and issue tracking. Validate work against BIM models to maintain the highest standards of build quality.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <AiFillDatabase className="w-4 h-4 text-lime-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">Data-Driven Insights and Project Intelligence</h3>
+                  <p className="text-gray-600">
+                    Gain actionable insights from integrated dashboards and analytics. Track performance, monitor timelines, and make informed decisions that enhance efficiency and reduce project risk.
                   </p>
                 </div>
               </div>
@@ -77,45 +88,21 @@ export function TechnologySection() {
               <FaArrowRight className="ml-2 w-4 h-4" />
             </a> */}
           </div>
-
-          {/* Technology Showcase */}
-          <div className="relative">
-            <div className="grid grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-lg p-6">
-                <div className="w-12 h-12 bg-blue-200 rounded-lg flex items-center justify-center mb-4">
-                  <FaMobileAlt className="w-6 h-6 text-lime-400" />
-                </div>
-                <h3 className="font-semibold mb-2">Mobile AR</h3>
-                <p className="text-sm text-gray-600">
-                  Real-time site visualization
-                </p>
-              </div>
-
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 rounded-lg p-6 mt-8">
-                <div className="w-12 h-12 bg-purple-200 rounded-lg flex items-center justify-center mb-4">
-                  <FaHeadphones className="w-6 h-6 text-purple-600" />
-                </div>
-                <h3 className="font-semibold mb-2">VR Experience</h3>
-                <p className="text-sm text-gray-600">Immersive project tours</p>
-              </div>
-
-              <div className="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-lg p-6 -mt-4">
-                <div className="w-12 h-12 bg-green-200 rounded-lg flex items-center justify-center mb-4">
-                  <FaDesktop className="w-6 h-6 text-green-700" />
-                </div>
-                <h3 className="font-semibold mb-2">Cloud Platform</h3>
-                <p className="text-sm text-gray-600">Unified data management</p>
-              </div>
-
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-lg p-6">
-                <div className="w-12 h-12 bg-blue-200 rounded-lg flex items-center justify-center mb-4">
-                  <FaArrowRight className="w-6 h-6 text-lime-400" />
-                </div>
-                <h3 className="font-semibold mb-2">Integration</h3>
-                <p className="text-sm text-gray-600">Seamless workflow</p>
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-2xl">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-xl p-6 flex justify-center items-center">
+                <Image
+                  src="/technolgy.gif"
+                  alt="Animated Web App Icon"
+                  width={800}
+                  height={800}
+                  className="w-full h-full object-contain rounded-lg"
+                  priority
+                />
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
