@@ -1,8 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { FaArrowRight, FaPlay, FaBolt } from "react-icons/fa";
+import { RxCross2 } from "react-icons/rx";
 
 export function HeroSection() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const handleOpenVideo = () => setIsVideoOpen(true);
+  const handleCloseVideo = () => setIsVideoOpen(false);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black text-white">
       {/* 🔹 Fullscreen Background Video */}
@@ -54,17 +59,37 @@ export function HeroSection() {
               Start Your Project
               <FaArrowRight className="ml-2" />
             </a>
-
-            <a
-              href="#demo"
+            <button
+              onClick={handleOpenVideo}
               className="inline-flex items-center justify-center px-6 py-3 rounded-md border border-lime-400 text-lime-400 hover:bg-blue-50 transition-colors text-lg"
             >
               <FaPlay className="mr-2" />
               Watch Demo
-            </a>
+            </button>
           </div>
         </div>
       </div>
+      {/* Video Modal */}
+      {isVideoOpen && (
+        <div className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="relative w-full max-w-3xl aspect-video bg-black">
+            <video
+              className="w-full h-full"
+              src="/videos/Load-Your-BIM.mp4"
+              controls
+              autoPlay
+              playsInline
+            />
+            <button
+              onClick={handleCloseVideo}
+              className="absolute top-2 right-2 bg-white text-black rounded-full p-2 hover:bg-red-600 hover:text-white transition"
+              aria-label="Close video"
+            >
+              <RxCross2 />
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

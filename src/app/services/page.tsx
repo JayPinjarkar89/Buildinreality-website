@@ -9,7 +9,7 @@ import {
   FaChartBar,
   FaCheckCircle,
 } from "react-icons/fa";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import { FiArrowRight } from "react-icons/fi";
 
 

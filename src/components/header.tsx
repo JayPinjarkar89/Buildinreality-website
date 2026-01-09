@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
-import { MdCable } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 
