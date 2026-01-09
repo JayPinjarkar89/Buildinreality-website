@@ -73,16 +73,17 @@ export function HeroSection() {
       {isVideoOpen && (
         <div className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="relative w-full max-w-3xl aspect-video bg-black">
-            <video
+            <iframe
+              src="https://drive.google.com/file/d/1GYwD3yH5Gl3ygm2NR4jiH2jc0EtoAXHu/preview"
               className="w-full h-full"
-              src="/videos/Load-Your-BIM.mp4"
-              controls
-              autoPlay
-              playsInline
+              allow="autoplay; fullscreen"
+              allowFullScreen
+              title="AR/VR Construction Demo"
             />
+
             <button
               onClick={handleCloseVideo}
-              className="absolute top-2 right-2 bg-white text-black rounded-full p-2 hover:bg-red-600 hover:text-white transition"
+              className="absolute top-2 left-2 bg-white text-black rounded-full p-2 hover:bg-red-600 hover:text-white transition"
               aria-label="Close video"
             >
               <RxCross2 />
