@@ -13,11 +13,12 @@ export function HeroSection() {
       {/* 🔹 Fullscreen Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="/videos/ar-visualization.mp4"
+        src="https://buildinreality.s3.ap-south-1.amazonaws.com/videos/ar-visualization.mp4"
         autoPlay
         loop
         muted
         playsInline
+        preload="auto"
       />
 
       {/* 🔹 Dark Overlay (for readability) */}
@@ -71,14 +72,14 @@ export function HeroSection() {
       </div>
       {/* Video Modal */}
       {isVideoOpen && (
-        <div className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="relative w-full max-w-3xl aspect-video bg-black">
-            <iframe
-              src="https://drive.google.com/file/d/1GYwD3yH5Gl3ygm2NR4jiH2jc0EtoAXHu/preview"
-              className="w-full h-full"
-              allow="autoplay; fullscreen"
-              allowFullScreen
-              title="AR/VR Construction Demo"
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden">
+            <video
+              className="w-full h-full object-contain"
+              src="https://buildinreality.s3.ap-south-1.amazonaws.com/videos/Buildinreality+%E2%80%93+Demo.mp4"
+              controls
+              autoPlay
+              playsInline
             />
 
             <button
