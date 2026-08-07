@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,11 +16,18 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
             {/* <MdCable size={32} className="text-lime-400" /> */}
-            <div className="flex items-center">
+            {/* <div className="flex items-center">
               <span className="text-xl font-bold text-gray-900">BUILD</span>
               <span className="text-xl font-bold text-lime-400">IN</span>
               <span className="text-xl font-bold text-gray-900">REALITY</span>
-            </div>
+            </div> */}
+            <Image
+              src="/logos/logo final.png"
+              alt="BuildInReality Logo"
+              width={250}
+              height={150}
+              className="object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}

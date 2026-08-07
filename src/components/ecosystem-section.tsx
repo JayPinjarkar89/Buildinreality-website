@@ -113,7 +113,7 @@ import { HiCheckCircle } from "react-icons/hi2";
 
 export function Ecosystem() {
   return (
-    <section className="w-full bg-[#0a0c0a] py-24 px-6 md:px-12 flex flex-col items-center text-white">
+    <section id="technology" className="w-full bg-[#0a0c0a] py-24 px-6 md:px-12 flex flex-col items-center text-white">
       {/* Section Header */}
       <div className="text-center max-w-2xl mb-16">
         <h2 className="text-3xl md:text-5xl font-bold text-[#a3e635] mb-3 whitespace-nowrap">
