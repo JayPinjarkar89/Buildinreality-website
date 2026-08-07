@@ -13,12 +13,12 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <HeroSection />
-      <FeaturesSection />
       <ChallengeSection />
       <MatrixBanner />
+      <FeaturesSection />
       <Ecosystem />
-      <RealitySystem />
-      <TechnologySection />
+      {/* <RealitySystem /> */}
+      {/* <TechnologySection /> */}
       <BuildForYou />
       {/* <WhoWeEmpower /> */}
       <CTASection />

@@ -40,7 +40,7 @@ export function BuildForYou() {
             <Image
               width={800}
               height={450}
-              src="/images/general-contractors.jpg"
+              src="/images/general-contractors.png"
               alt="General Contractors"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
             />
@@ -55,7 +55,7 @@ export function BuildForYou() {
         <div className="flex flex-col">
           <div className="rounded-2xl overflow-hidden mb-6 h-64 md:h-72 shadow-md">
             <Image
-              src="/images/specialty-contractors.jpg"
+              src="/images/specialty-contractors.png"
               alt="Specialty Contractors"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
               width={800}
