@@ -11,7 +11,7 @@ export function ChallengeSection() {
 
         {/* Left Column - The Challenge */}
         <div className="flex flex-col justify-center">
-          <span className="text-[#00838f] font-bold text-xs md:text-sm tracking-widest uppercase mb-3">
+          <span className="text-[#a3e635] font-bold text-xs md:text-sm tracking-widest uppercase mb-3">
             THE CHALLENGE
           </span>
           <h2 className="text-4xl md:text-5xl font-extrabold text-[#111827] tracking-tight leading-[1.15] mb-10">
@@ -62,7 +62,7 @@ export function ChallengeSection() {
           </div>
 
           <div>
-            <span className="text-[#00bcd4] font-bold text-xs md:text-sm tracking-widest uppercase mb-3 block">
+            <span className="text-[#a3e635] font-bold text-xs md:text-sm tracking-widest uppercase mb-3 block">
               THE SOLUTION
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-[1.15] mb-10">
@@ -72,7 +72,7 @@ export function ChallengeSection() {
             <div className="space-y-8">
               {/* Feature 1 */}
               <div className="flex items-start gap-5">
-                <div className="text-[#00bcd4] text-3xl mt-0.5 shrink-0">
+                <div className="text-[#a3e635] text-3xl mt-0.5 shrink-0">
                   <BiCheckShield />
                 </div>
                 <div>
@@ -88,7 +88,7 @@ export function ChallengeSection() {
 
               {/* Feature 2 */}
               <div className="flex items-start gap-5">
-                <div className="text-[#00bcd4] text-3xl mt-0.5 shrink-0">
+                <div className="text-[#a3e635] text-3xl mt-0.5 shrink-0">
                   <BiSync />
                 </div>
                 <div>
@@ -108,7 +108,7 @@ export function ChallengeSection() {
           <div className="mt-12 pt-4">
             <a
               href="#compare-features"
-              className="inline-flex items-center gap-2 text-[#00bcd4] font-semibold text-base hover:text-cyan-300 transition-colors group"
+              className="inline-flex items-center gap-2 text-[#a3e635] font-semibold text-base hover:text-cyan-300 transition-colors group"
             >
               Compare Features
               <HiOutlineArrowRight className="transition-transform group-hover:translate-x-1" />

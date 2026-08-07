@@ -7,7 +7,7 @@ export function MatrixBanner() {
 
         {/* Stat 1 */}
         <div className="flex flex-col items-center">
-          <h2 className="text-5xl md:text-6xl font-extrabold text-[#00bcd4] tracking-tight mb-4">
+          <h2 className="text-5xl md:text-6xl font-extrabold text-[#a3e635] tracking-tight mb-4">
             2-3x
           </h2>
           <h3 className="text-2xl font-bold text-white mb-3">
@@ -21,7 +21,7 @@ export function MatrixBanner() {
 
         {/* Stat 2 */}
         <div className="flex flex-col items-center">
-          <h2 className="text-5xl md:text-6xl font-extrabold text-[#00bcd4] tracking-tight mb-4">
+          <h2 className="text-5xl md:text-6xl font-extrabold text-[#a3e635] tracking-tight mb-4">
             20-30%
           </h2>
           <h3 className="text-2xl font-bold text-white mb-3">
@@ -35,7 +35,7 @@ export function MatrixBanner() {
 
         {/* Stat 3 */}
         <div className="flex flex-col items-center">
-          <h2 className="text-5xl md:text-6xl font-extrabold text-[#00bcd4] tracking-tight mb-4">
+          <h2 className="text-5xl md:text-6xl font-extrabold text-[#a3e635] tracking-tight mb-4">
             100%
           </h2>
           <h3 className="text-2xl font-bold text-white mb-3">

@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 
@@ -9,12 +11,16 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              {/* <FaCube size={32} color="text-lime-400" /> */}
-              <div className="flex items-center">
-                <span className="text-xl font-bold">BUILD</span>
-                <span className="text-xl font-bold text-lime-400">IN</span>
-                <span className="text-xl font-bold">REALITY</span>
-              </div>
+              <Link href="/" >
+                <Image
+                  src="/logos/logo final.png" // Replace with your logo path
+                  alt="BuildInReality"
+                  width={180}
+                  height={50}
+                  priority
+                  className="h-10 w-auto"
+                />
+              </Link>
             </div>
             <p className="text-gray-600 text-sm">
               Neuroleap Innovations Private Limited

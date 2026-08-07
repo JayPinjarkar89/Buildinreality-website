@@ -115,11 +115,11 @@ export function Ecosystem() {
   return (
     <section id="technology" className="w-full bg-[#0a0c0a] py-24 px-6 md:px-12 flex flex-col items-center text-white">
       {/* Section Header */}
-      <div className="text-center max-w-2xl mb-16">
-        <h2 className="text-3xl md:text-5xl font-bold text-[#a3e635] mb-3 whitespace-nowrap">
+      <div className="text-center max-w-5xl mx-auto px-4 mb-10 sm:mb-12 md:mb-16">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#a3e635] leading-tight md:whitespace-nowrap">
           THE BUILDINREALITY ECOSYSTEM
         </h2>
-        <p className="text-gray-400 text-xs md:text-sm tracking-widest uppercase">
+        <p className="mt-3 text-[10px] sm:text-xs md:text-sm tracking-[0.2em] uppercase text-gray-400">
           ENGINEERED FOR ABSOLUTE PRECISION
         </p>
       </div>

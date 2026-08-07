@@ -1,63 +1,195 @@
+// "use client";
+
+// import { useState, useEffect } from "react";
+// import Link from "next/link";
+// import Image from "next/image";
+// import { FiMenu } from "react-icons/fi";
+// import { RxCross2 } from "react-icons/rx";
+
+// export function Header() {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+//   // Prevent body scroll when mobile menu is open
+//   useEffect(() => {
+//     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+
+//     return () => {
+//       document.body.style.overflow = "auto";
+//     };
+//   }, [isMenuOpen]);
+
+//   const navLinks = [
+//     { name: "Home", href: "/" },
+//     { name: "Services", href: "/services" },
+//     { name: "Solutions", href: "/#solutions" },
+//     { name: "Technology", href: "/#technology" },
+//     { name: "Contact", href: "/#contact" },
+//   ];
+
+//   return (
+//     <header className="sticky top-0 z-50 bg-white shadow-sm">
+//       <div className="max-w-7xl mx-auto px-5 lg:px-8">
+//         <div className="flex h-20 items-center justify-between">
+//           {/* Logo */}
+//           <Link href="/" onClick={() => setIsMenuOpen(false)}>
+//             <Image
+//               src="/logos/logo final.png" // Replace with your logo path
+//               alt="BuildInReality"
+//               width={180}
+//               height={50}
+//               priority
+//               className="h-10 w-auto"
+//             />
+//           </Link>
+
+//           {/* Desktop Navigation */}
+//           <nav className="hidden md:flex items-center gap-8">
+//             {navLinks.map((link) => (
+//               <Link
+//                 key={link.name}
+//                 href={link.href}
+//                 className="text-gray-800 hover:text-lime-400 transition-colors duration-300 font-medium"
+//               >
+//                 {link.name}
+//               </Link>
+//             ))}
+//           </nav>
+
+//           {/* Desktop CTA */}
+//           <div className="hidden md:block">
+//             <Link
+//               href="https://docs.google.com/forms/d/e/1FAIpQLScJ3xcv1kDrWptN6QtZ-B1ozUp5hQIo7p26HtYCreJ75cH2cg/viewform?usp=sharing&ouid=109386348153102760754"
+//               target="_blank"
+//               className="rounded-lg bg-lime-400 px-5 py-2.5 text-white font-medium hover:bg-lime-500 transition-colors duration-300"
+//             >
+//               Contact Us
+//             </Link>
+//           </div>
+
+//           {/* Mobile Menu Button */}
+//           <button
+//             onClick={() => setIsMenuOpen(!isMenuOpen)}
+//             className="md:hidden rounded-md p-2"
+//             aria-label="Toggle menu"
+//           >
+//             {isMenuOpen ? (
+//               <RxCross2 size={28} />
+//             ) : (
+//               <FiMenu size={28} />
+//             )}
+//           </button>
+//         </div>
+//       </div>
+
+//       {/* Mobile Menu */}
+//       {isMenuOpen && (
+//         <div className="md:hidden border-t border-gray-200 bg-white shadow-lg">
+//           <nav className="flex flex-col px-6 py-6 space-y-5">
+//             {navLinks.map((link) => (
+//               <Link
+//                 key={link.name}
+//                 href={link.href}
+//                 onClick={() => setIsMenuOpen(false)}
+//                 className="text-gray-800 hover:text-lime-400 transition-colors duration-300 text-lg font-medium"
+//               >
+//                 {link.name}
+//               </Link>
+//             ))}
+
+//             <Link
+//               href="https://docs.google.com/forms/d/e/1FAIpQLScJ3xcv1kDrWptN6QtZ-B1ozUp5hQIo7p26HtYCreJ75cH2cg/viewform?usp=sharing&ouid=109386348153102760754"
+//               target="_blank"
+//               onClick={() => setIsMenuOpen(false)}
+//               className="mt-4 rounded-lg bg-lime-400 py-3 text-center text-white font-semibold hover:bg-lime-500 transition-colors duration-300"
+//             >
+//               Contact Us
+//             </Link>
+//           </nav>
+//         </div>
+//       )}
+//     </header>
+//   );
+// }
 "use client";
 
-import { useState } from "react";
-import { FiMenu } from "react-icons/fi";
-import { RxCross2 } from "react-icons/rx";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { FiMenu } from "react-icons/fi";
+import { RxCross2 } from "react-icons/rx";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isMenuOpen]);
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "Solutions", href: "/#solutions" },
+    { name: "Technology", href: "/#technology" },
+  ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <header
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
+          ? "bg-white/90 backdrop-blur-md py-4 shadow-sm"
+          : "bg-transparent py-6"
+        }`}
+    >
+      <div className="max-w-7xl mx-auto px-5 lg:px-8">
+        <div className="flex items-center justify-between">
+
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            {/* <MdCable size={32} className="text-lime-400" /> */}
-            {/* <div className="flex items-center">
-              <span className="text-xl font-bold text-gray-900">BUILD</span>
-              <span className="text-xl font-bold text-lime-400">IN</span>
-              <span className="text-xl font-bold text-gray-900">REALITY</span>
-            </div> */}
+          <Link href="/" onClick={() => setIsMenuOpen(false)}>
             <Image
               src="/logos/logo final.png"
-              alt="BuildInReality Logo"
-              width={250}
-              height={150}
-              className="object-contain"
+              alt="BuildInReality"
+              width={180}
+              height={50}
+              priority
+              className="h-10 w-auto"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-800 hover:text-lime-400 transition-classNames">
-              Home
-            </Link>
-            <Link href="/services" className="text-gray-800 hover:text-lime-400 transition-classNames">
-              Services
-            </Link>
-            <Link href="/#solutions" className="text-gray-800 hover:text-lime-400 transition-classNames">
-              Solutions
-            </Link>
-            <Link href="/#technology" className="text-gray-800 hover:text-lime-400 transition-classNames">
-              Technology
-            </Link>
-            {/* <Link href="/#about" className="text-gray-800 hover:text-lime-400 transition-classNames">
-              About
-            </Link> */}
-            <Link href="/#contact" className="text-gray-800 hover:text-lime-400 transition-classNames">
-              Contact
-            </Link>
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`transition-colors duration-200 font-medium ${isScrolled
+                    ? "text-gray-700 hover:text-lime-500"
+                    : "text-gray-200 hover:text-lime-400"
+                  }`}
+              >
+                {link.name}
+              </Link>
+            ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:flex">
+          {/* Desktop CTA */}
+          <div className="hidden md:block">
             <Link
-              href="https://docs.google.com/forms/d/e/1FAIpQLScJ3xcv1kDrWptN6QtZ-B1ozUp5hQIo7p26HtYCreJ75cH2cg/viewform?usp=sharing&ouid=109386348153102760754"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScJ3xcv1kDrWptN6QtZ-B1ozUp5hQIo7p26HtYCreJ75cH2cg/viewform"
               target="_blank"
-              className="px-4 py-2 rounded-md bg-lime-400 text-white font-medium hover:bg-gray-500 transition-classNames"
+              className="rounded-full bg-lime-400 px-6 py-2.5 text-white font-semibold hover:bg-lime-500 transition-all duration-300 shadow-lg hover:shadow-lime-500/30"
             >
               Contact Us
             </Link>
@@ -65,50 +197,42 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className={`md:hidden p-2 transition-colors ${isScrolled ? "text-gray-800" : "text-white"
+              }`}
+            aria-label="Toggle menu"
           >
-            {isMenuOpen ? (
-              <RxCross2 size={24} className="text-black-700" /> // text-gray-900
-            ) : (
-              <FiMenu size={24} className="text-black-700" />
-            )}
+            {isMenuOpen ? <RxCross2 size={28} /> : <FiMenu size={28} />}
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
-            <nav className="flex flex-col space-y-4">
-              <Link href="/" className="text-gray-800 hover:text-lime-400 transition-classNames">
-                Home
-              </Link>
-              <Link href="/services" className="text-gray-800 hover:text-lime-400 transition-classNames">
-                Services
-              </Link>
-              <Link href="#solutions" className="text-gray-800 hover:text-lime-400 transition-classNames">
-                Solutions
-              </Link>
-              <Link href="#technology" className="text-gray-800 hover:text-lime-400 transition-classNames">
-                Technology
-              </Link>
-              {/* <Link href="#about" className="text-gray-800 hover:text-lime-400 transition-classNames">
-                About
-              </Link> */}
-              <Link href="#contact" className="text-gray-800 hover:text-lime-400 transition-classNames">
-                Contact
-              </Link>
-              <Link
-                href="https://docs.google.com/forms/d/e/1FAIpQLScJ3xcv1kDrWptN6QtZ-B1ozUp5hQIo7p26HtYCreJ75cH2cg/viewform?usp=sharing&ouid=109386348153102760754"
-                target="_blank"
-                className="w-full mt-4 px-4 py-2 rounded-md bg-lime-400 text-white font-medium hover:bg-blue-500 transition-classNames text-center"
-              >
-                Contact Us
-              </Link>
-            </nav>
-          </div>
-        )}
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden border-t border-gray-200 bg-white shadow-lg absolute top-full left-0 w-full">
+          <nav className="flex flex-col px-6 py-6 space-y-5">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="text-gray-800 hover:text-lime-500 transition-colors duration-300 text-lg font-medium"
+              >
+                {link.name}
+              </Link>
+            ))}
+
+            <Link
+              href="https://docs.google.com/forms/d/e/1FAIpQLScJ3xcv1kDrWptN6QtZ-B1ozUp5hQIo7p26HtYCreJ75cH2cg/viewform"
+              target="_blank"
+              onClick={() => setIsMenuOpen(false)}
+              className="mt-4 rounded-lg bg-lime-400 py-3 text-center text-white font-semibold hover:bg-lime-500 transition-colors duration-300"
+            >
+              Contact Us
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
