@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BuildinReality Website
+
+BuildinReality is a modern marketing and product website for an AR/VR construction technology company. The site showcases the platform's capabilities, project impact, and call-to-action flows for prospective clients.
+
+## Overview
+
+This project is built with Next.js and uses the App Router to deliver a high-performance, responsive experience for desktop and mobile visitors.
+
+## Tech Stack
+
+- Next.js 15
+- React 19
+- TypeScript
+- Tailwind CSS
+- react-hot-toast
+- react-icons
+
+## Project Structure
+
+```bash
+.
+├── public/
+├── src/
+│   ├── app/
+│   ├── components/
+│   └── ...
+├── package.json
+├── tsconfig.json
+├── next.config.ts
+├── eslint.config.mjs
+├── postcss.config.mjs
+└── README.md
+```
+
+## Features
+
+- Modern landing page for construction-tech solutions
+- Service-oriented page layout
+- Responsive UI for multiple screen sizes
+- SEO-ready metadata and app configuration
+- Contact/demo CTA integration
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm, pnpm, yarn, or bun
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+### Start production server
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run dev      # Start dev server
+npm run build    # Create production build
+npm run start    # Run production build locally
+npm run lint     # Run ESLint
+```
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is ready to deploy to platforms such as Vercel, Netlify, or a custom Node.js hosting environment.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Branding and SEO
+
+The site includes metadata in the app layout and dedicated sitemap and manifest files under the App Router for better discoverability and PWA support.
+
+## License
+
+This project is for internal business use unless otherwise specified by the owner.

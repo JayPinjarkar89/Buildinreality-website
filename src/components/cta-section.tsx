@@ -12,7 +12,7 @@ const handleDemo = () => {
 export function CTASection() {
   return (
     <section
-      id="contact"
+      id="#contact"
       className="py-24 bg-gradient-to-r from-stone-950 via-accent to-stone-950"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,7 +52,7 @@ export function CTASection() {
               </div>
               <div className="flex items-center space-x-2">
                 <FiPhone />
-                <span>+91 8999529110</span>
+                <span>+91 9960529110</span>
               </div>
             </div>
           </div>

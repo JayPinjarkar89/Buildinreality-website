@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 
@@ -9,18 +11,22 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              {/* <FaCube size={32} color="text-lime-400" /> */}
-              <div className="flex items-center">
-                <span className="text-xl font-bold">BUILD</span>
-                <span className="text-xl font-bold text-lime-400">IN</span>
-                <span className="text-xl font-bold">REALITY</span>
-              </div>
+              <Link href="/" >
+                <Image
+                  src="/logos/logo final.png" // Replace with your logo path
+                  alt="BuildInReality"
+                  width={180}
+                  height={50}
+                  priority
+                  className="h-10 w-auto"
+                />
+              </Link>
             </div>
             <p className="text-gray-600 text-sm">
               Neuroleap Innovations Private Limited
             </p>
             <p className="text-gray-600 text-sm">
-              Transforming construction through innovative AR/VR technology
+              Transforming construction through innovative AI+AR/VR+BIM technology
               solutions.
             </p>
           </div>
@@ -30,23 +36,18 @@ export function Footer() {
             <h3 className="font-semibold text-lg">Solutions</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>
-                <a href="#" className="hover:text-lime-400 transition-colors">
-                  AR Visualization
+                <a href="/services/#sitelens" className="hover:text-lime-400 transition-colors">
+                  SiteLens
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-lime-400 transition-colors">
-                  3D Modeling
+                <a href="/services/#fieldsync" className="hover:text-lime-400 transition-colors">
+                  FieldSync
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-lime-400 transition-colors">
-                  Project Management
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-lime-400 transition-colors">
-                  Team Collaboration
+                <a href="/services/#issue-management" className="hover:text-lime-400 transition-colors">
+                  Issue Management
                 </a>
               </li>
             </ul>
@@ -62,18 +63,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-lime-400 transition-colors">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-lime-400 transition-colors">
-                  News
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-lime-400 transition-colors">
-                  Partners
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7jSSKcG4JBoG8mxn-wj4s5jOtw9igfsSzJcjJATuv20IYEg/viewform?usp=dialog" className="hover:text-lime-400 transition-colors">
+                  Contact
                 </a>
               </li>
             </ul>
@@ -85,11 +76,13 @@ export function Footer() {
             <div className="space-y-3 text-sm text-gray-600">
               <div className="flex items-center space-x-2">
                 <MdEmail className="w-2 h-2" />
-                <span>connect@buildinreality.com</span>
+                <a href="mailto:connect@buildinreality.com" className="hover:text-lime-400 transition-colors">
+                  connect@buildinreality.com
+                </a>
               </div>
               <div className="flex items-center space-x-2">
                 <MdPhone className="w-2 h-2" />
-                <span>+91 8999529110</span>
+                <span>+91 9960529110</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MdLocationOn className="w-2 h-2" />
@@ -103,7 +96,7 @@ export function Footer() {
         <div className="border-t border-gray-300 mt-12 pt-8">
           <div className="flex flex-col sm:flex-row items-center justify-between">
             <p className="text-sm text-gray-500">
-              © 2024 Buildinreality. All rights reserved.
+              © 2026 Buildinreality. All rights reserved.
             </p>
             <div className="flex items-center space-x-4 mt-4 sm:mt-0">
               <a

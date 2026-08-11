@@ -42,7 +42,7 @@ export function HeroSection() {
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
             Transform Construction with{" "}
-            <span className="text-lime-400">AR/VR</span> Innovation
+            <span className="text-lime-400">AI+AR/VR+BIM</span> Innovation
           </h1>
 
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
