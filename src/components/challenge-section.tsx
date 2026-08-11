@@ -105,7 +105,7 @@ export function ChallengeSection() {
           </div>
 
           {/* Footer Action Link */}
-          <div className="mt-12 pt-4">
+          {/* <div className="mt-12 pt-4">
             <a
               href="#compare-features"
               className="inline-flex items-center gap-2 text-[#a3e635] font-semibold text-base hover:text-cyan-300 transition-colors group"
@@ -113,7 +113,7 @@ export function ChallengeSection() {
               Compare Features
               <HiOutlineArrowRight className="transition-transform group-hover:translate-x-1" />
             </a>
-          </div>
+          </div> */}
 
         </div>
 

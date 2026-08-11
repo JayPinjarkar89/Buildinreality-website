@@ -107,6 +107,7 @@
 // }
 
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { HiOutlineEye, HiOutlineRefresh, HiOutlineArrowRight } from "react-icons/hi";
 import { HiCheckCircle } from "react-icons/hi2";
@@ -164,13 +165,13 @@ export function Ecosystem() {
           </div>
 
           <div>
-            <a
-              href="#sitelens"
+            <Link
+              href="/services/#fieldsync"
               className="inline-flex items-center gap-2 text-[#a3e635] font-semibold text-base hover:text-lime-400 transition-colors group"
             >
-              Learn more about SiteLens
+              Learn more about FieldSync
               <HiOutlineArrowRight className="transition-transform group-hover:translate-x-1" />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -210,13 +211,13 @@ export function Ecosystem() {
           </div>
 
           <div>
-            <a
-              href="#fieldsync"
+            <Link
+              href="/services/#sitelens"
               className="inline-flex items-center gap-2 text-[#a3e635] font-semibold text-base hover:text-lime-400 transition-colors group"
             >
-              Learn more about FieldSync
+              Learn more about SiteLens
               <HiOutlineArrowRight className="transition-transform group-hover:translate-x-1" />
-            </a>
+            </Link>
           </div>
         </div>
       </div >
