@@ -14,41 +14,20 @@ const videos = {
 
 export function CapabilityVideo() {
   const [activeTab, setActiveTab] = useState<VideoTab>("sitelens");
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-  const sitelensRef = useRef<HTMLVideoElement>(null);
-  const fieldsyncRef = useRef<HTMLVideoElement>(null);
-
-  const playVideo = (tab: VideoTab) => {
+  const changeVideo = (tab: VideoTab) => {
     setActiveTab(tab);
-
-    const video =
-      tab === "sitelens"
-        ? sitelensRef.current
-        : fieldsyncRef.current;
-
-    if (video) {
-      video.currentTime = 0;
-      video.play().catch(() => {
-        // Browser may block autoplay.
-      });
-    }
   };
 
-  const handleVideoEnd = (
-    videoRef: React.RefObject<HTMLVideoElement | null>
-  ) => {
-    videoRef.current?.pause();
-  };
-
-  // Handle URL hash navigation
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
 
       if (hash.includes("fieldsync")) {
-        playVideo("fieldsync");
+        setActiveTab("fieldsync");
       } else if (hash.includes("sitelens")) {
-        playVideo("sitelens");
+        setActiveTab("sitelens");
       }
     };
 
@@ -61,6 +40,19 @@ export function CapabilityVideo() {
     };
   }, []);
 
+  // Play whenever active video changes
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (!video) return;
+
+    video.currentTime = 0;
+
+    video.play().catch(() => {
+      // Autoplay can be blocked by the browser.
+    });
+  }, [activeTab]);
+
   return (
     <>
       {/* Tabs */}
@@ -68,10 +60,11 @@ export function CapabilityVideo() {
         <button
           onClick={() => {
             window.location.hash = "sitelens";
+            changeVideo("sitelens");
           }}
           className={`flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 ${activeTab === "sitelens"
-            ? "bg-[#a3e635] text-black shadow-lg shadow-lime-500/10"
-            : "bg-[#121412] text-gray-400 border border-gray-800 hover:text-white"
+              ? "bg-[#a3e635] text-black shadow-lg shadow-lime-500/10"
+              : "bg-[#121412] text-gray-400 border border-gray-800 hover:text-white"
             }`}
         >
           <FaEye />
@@ -81,10 +74,11 @@ export function CapabilityVideo() {
         <button
           onClick={() => {
             window.location.hash = "fieldsync";
+            changeVideo("fieldsync");
           }}
           className={`flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 ${activeTab === "fieldsync"
-            ? "bg-[#a3e635] text-black shadow-lg shadow-lime-500/10"
-            : "bg-[#121412] text-gray-400 border border-gray-800 hover:text-white"
+              ? "bg-[#a3e635] text-black shadow-lg shadow-lime-500/10"
+              : "bg-[#121412] text-gray-400 border border-gray-800 hover:text-white"
             }`}
         >
           <FaSync />
@@ -92,36 +86,22 @@ export function CapabilityVideo() {
         </button>
       </div>
 
-      {/* Video Container */}
-      <div className="max-w-5xl mx-auto mb-12 sm:mb-16 rounded-2xl overflow-hidden border border-gray-800 bg-[#121412] shadow-2xl">
-        <div className="h-[220px] xs:h-[280px] sm:h-[400px] md:h-[520px] w-full relative bg-black flex items-center justify-center">
-          {/* SiteLens */}
+      {/* Video */}
+      <div className="max-w-5xl mx-auto mb-12 sm:mb-16">
+        <div className="w-full overflow-hidden rounded-2xl border border-gray-800 bg-black shadow-2xl">
           <video
-            ref={sitelensRef}
+            key={activeTab}
+            ref={videoRef}
+            src={videos[activeTab]}
             muted
             playsInline
             preload="auto"
-            onEnded={() => handleVideoEnd(sitelensRef)}
-            className={`w-full h-full ${activeTab === "sitelens" ? "block" : "hidden"
-              } object-contain md:object-cover`}
-          >
-            <source src={videos.sitelens} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-
-          {/* FieldSync */}
-          <video
-            ref={fieldsyncRef}
-            muted
-            playsInline
-            preload="auto"
-            onEnded={() => handleVideoEnd(fieldsyncRef)}
-            className={`w-full h-full ${activeTab === "fieldsync" ? "block" : "hidden"
-              } object-contain md:object-cover`}
-          >
-            <source src={videos.fieldsync} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+            controls={false}
+            onEnded={(event) => {
+              event.currentTarget.pause();
+            }}
+            className="block w-full h-auto"
+          />
         </div>
       </div>
     </>
